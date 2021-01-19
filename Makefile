@@ -1,6 +1,6 @@
 build:
-	#docker build -t donko/btcroc:v0.1 .
-	sh run_docker.sh
+	docker build -t donko/btcroc:v0.1 .
+	#sh run_docker.sh
 
 upload:
 	sh upload_docker.sh
