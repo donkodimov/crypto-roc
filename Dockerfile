@@ -17,4 +17,4 @@ RUN pip install --upgrade pip &&\
 EXPOSE 8501
 
 ## Step 5:
-CMD ["streamlit", "run", "app.py"]
+CMD ["streamlit", "run", "app.py", "--server.enableCORS=false"]
