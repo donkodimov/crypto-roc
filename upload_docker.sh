@@ -6,16 +6,16 @@
 # Step 1:
 # Create dockerpath
 
-dockerpath=donko/btcroc
-read tag
+dockerpath=donko/btcroc:v0.1
+
 
 # Step 2:  
 # Authenticate & tag
 docker login --username=donko
-docker tag btcroc ${dockerpath}$tag
+docker tag btcroc ${dockerpath}
 echo "Docker ID and Image: $dockerpath"
 
 # Step 3:
 # Push image to a docker repository
 
-docker push ${dockerpath}:$tag
+docker push ${dockerpath}
