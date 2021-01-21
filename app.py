@@ -42,7 +42,7 @@ COL2, COL3 = st.beta_columns((2, 1))
 COL1.header('Input Options')
 
 # Sidebar - Currency price unit
-CURRENCY_PRICE_UNIT = COL1.selectbox('Select currency', ('SNT-USD', 'BTC-USD', 'ETH-USD'))
+CURRENCY_PRICE_UNIT = COL1.selectbox('Select currency', ('SNT-USD', 'BTC-USD', 'ETH-USD', 'LTC-USD'))
 ROC_PERIOD = COL1.selectbox('Select ROC period', (15, 25, 50, 100, 200))
 START_DATE = COL1.date_input("Start date", datetime.date(2010, 1, 1))
 END_DATE = COL1.date_input("End date", datetime.datetime.now())
