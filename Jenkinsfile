@@ -35,10 +35,7 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        kubernetesDeploy(kubeconfigId: 'kubeconfig02',
-
-                 configs: '/tmp/btcroc-deploy.yaml'
-        )
+        sh 'ssh -T toni@192.168.2.201 kubectl apply -f ~/btcroc/btcroc-deploy.yaml --record'
       }
     }
 
