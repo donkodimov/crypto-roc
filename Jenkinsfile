@@ -35,7 +35,10 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        kubernetesDeploy()
+        kubernetesDeploy(kubeconfigId: 'kubeconfig02',
+
+                 configs: '/tmp/btcroc-deploy.yaml'
+        )
       }
     }
 
