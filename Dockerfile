@@ -2,7 +2,7 @@ FROM python:3.8-slim
 
 ## Step 1:
 WORKDIR /app
-COPY requirements.txt
+COPY requirements.txt /app/
 
 ## Step 2:
 # Install packages from requirements.txt
