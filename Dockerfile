@@ -3,15 +3,16 @@ FROM python:3.8-slim
 ## Step 1:
 
 WORKDIR /app
+COPY requirements.txt /app/
 
 ## Step 2:
-COPY . app.py logo.jpg /app/
-
-## Step 3:
 # Install packages from requirements.txt
 # hadolint ignore=DL3013
 RUN pip install --no-cache-dir --upgrade pip &&\
     pip install --no-cache-dir --trusted-host pypi.python.org -r requirements.txt
+
+## Step 3:
+COPY . app.py logo.jpg /app/
 
 ## Step 4:
 EXPOSE 8501
