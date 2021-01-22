@@ -6,7 +6,7 @@
 # Step 1:
 # Create dockerpath
 
-dockerpath=donko/btcroc:v0.1
+dockerpath=donko/btcroc:v0.1.1
 
 
 # Step 2:  
