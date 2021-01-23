@@ -29,6 +29,7 @@ EXPANDER_BAR.markdown("""
 * **Python libraries:** base64, pandas, streamlit, yfinance, numpy, matplotlib, seaborn, BeautifulSoup, requests, json, time
 * **Data source:** [Yahoo Finance](http://finance.yahoo.com).
 * **Credit:** Investing with Python: Rate of Change *[Investing with Python: Rate of Change](http://www.andrewshamlet.net/2017/07/07/python-tutorial-roc/)*.
+* **Credit:** Build 12 Data Science Apps with Python and Streamlit *[Build 12 Data Science Apps with Python and Streamlit](https://www.freecodecamp.org/news/build-12-data-science-apps-with-python-and-streamlit/)*.
 """)
 
 # ---------------------------------#
