@@ -15,6 +15,11 @@ RUN pip install --no-cache-dir --upgrade pip &&\
 COPY . app.py logo.jpg /app/
 
 ## Step 4:
+# Add git hash
+ARG GIT_HASH
+ENV GIT_HASH=${GIT_HASH:-dev}
+
+## Step 4:
 EXPOSE 8501
 
 ## Step 5:
