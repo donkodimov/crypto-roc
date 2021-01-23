@@ -15,7 +15,7 @@ pipeline {
 
     stage('Security Scan') {
       steps {
-        aquaMicroscanner(imageName: 'donko/btcroc:v0.1', onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
+        aquaMicroscanner(imageName: 'donko/btcroc:latest', onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
       }
     }
 
