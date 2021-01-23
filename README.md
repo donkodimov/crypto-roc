@@ -48,3 +48,9 @@ Use your bowser to visit the app on `localhost:8501`
 ```
 
 * If you want to reach the app outside the running machine, make sure port 8501 is not filtered by firewall.
+
+### License
+`crypto-roc` is free and open source software and may be redistributed under the terms specified in the
+[LICENSE] file.
+
+[LICENSE]: https://github.com/donkodimov/crypto-roc/blob/develop/LICENSE
