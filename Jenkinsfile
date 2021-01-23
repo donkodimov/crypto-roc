@@ -35,7 +35,7 @@ pipeline {
 
     stage('Deploy to Kubernetes') {
       steps {
-        sh "make k82-deploy"
+        sh "make k8s-deploy"
       }
     }
 
