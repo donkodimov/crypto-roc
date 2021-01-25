@@ -70,9 +70,17 @@ def roc(dataframe, period):
     result = pd.Series(((difference / old_price) * 100), name='ROC_' + str(old_price))
     return result
 
+def pm_ratio(metal):
+    """ This function calculates the ratio cryptocurrency vs presious metals."""
+    df_metal = pd.DataFrame(get_crypto(metal, '1d', START_DATE, END_DATE))
+    ratio = DF['Close'] / df_metal['Close']
+    return ratio
+
 
 DF = pd.DataFrame(get_crypto(CURRENCY_PRICE_UNIT, '1d', START_DATE, END_DATE))
 DF['ROC'] = roc(DF['Close'], ROC_PERIOD)
+DF['Gold'] = pm_ratio('GC=F')
+#DF['GOLD'] =
 DF.tail()
 
 st.write("""
@@ -81,6 +89,7 @@ st.write("""
 ***
 """)
 st.line_chart(DF['Close'])
+st.line_chart(DF['Gold'])
 st.line_chart(DF['ROC'])
 
 
