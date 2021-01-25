@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  environment {
-       VERSION = sh(returnStdout: true, script: 'version.sh')
-   }
   stages {
     stage('Lint') {
       steps {
@@ -18,6 +15,9 @@ pipeline {
 
     stage('Security Scan') {
       steps {
+        script {
+          VERSION = sh(returnStdout: true, script: 'version.sh')
+        }
         aquaMicroscanner(imageName: 'donko/btcroc:${VERSION}', onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
       }
     }
