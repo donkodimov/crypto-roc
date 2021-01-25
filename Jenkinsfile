@@ -18,7 +18,7 @@ pipeline {
         script {
           VERSION = sh(returnStdout: true, script: 'bash version.sh')
         }
-        aquaMicroscanner(imageName: 'donko/btcroc:${VERSION}', onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
+        aquaMicroscanner(imageName: "donko/btcroc:${VERSION}", onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
       }
     }
 
