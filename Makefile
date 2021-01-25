@@ -50,7 +50,7 @@ lint:
 	pylint app.py
 
 k8s-deploy: # Deploy to kubernetes
-	ssh -T master "kubectl set image -n develop deployment/btcroc-deployment btcroc=donko/btcroc:${VERSION}"
+	ssh -T master "kubectl set image -n feature deployment/btcroc-deployment btcroc=donko/btcroc:${VERSION}"
 
 version: ## Output the current version
 	@echo $(VERSION)
