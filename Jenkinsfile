@@ -13,15 +13,6 @@ pipeline {
       }
     }
 
-    stage('Security Scan') {
-      steps {
-        script {
-          VERSION = sh(returnStdout: true, script: 'bash version.sh')
-        }
-        aquaMicroscanner(imageName: "donko/btcroc:${VERSION}", onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
-      }
-    }
-
     stage('Login to dockerhub') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
@@ -33,6 +24,15 @@ pipeline {
     stage('Upload Image') {
       steps {
         sh 'make upload'
+      }
+    }
+
+    stage('Security Scan') {
+      steps {
+        script {
+          VERSION = sh(returnStdout: true, script: 'bash version.sh')
+        }
+        aquaMicroscanner(imageName: "donko/btcroc:${VERSION}", onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
       }
     }
 
