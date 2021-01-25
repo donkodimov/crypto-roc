@@ -1,10 +1,7 @@
 pipeline {
   agent any
   environment {
-       VERSION = """${sh(
-                returnStdout: true,
-                script: 'version.sh'
-            )}"""
+       VERSION = """${sh version.sh}"""
    }
   stages {
     stage('Lint') {
