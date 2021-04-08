@@ -1,8 +1,8 @@
 # crypto-roc
 
-crypto-roc is web app that plots the **cryptocurrency price** of a selected crypto pair, and the **rate of change** metrics.
-this web app is created using `streamlit` Python library for learning purpose only. 
-Do not use as an investment advice. 
+crypto-roc is web app that compares a **historical cryptocurrency price** versus the price of different hard assets (gold, real estate ...).
+This web app is created using `streamlit` Python library for learning purpose only. 
+Do not use it as an investment advice. 
 
 ### Rate of Change (ROC)
 
@@ -33,7 +33,7 @@ make run
 
 4. Open the web:
  
-Use your bowser to visit the app on `localhost:8501`
+Use your browser to visit the app on `localhost:8501`
 
 
 
@@ -47,7 +47,7 @@ Use your bowser to visit the app on `localhost:8501`
  newgrp docker
 ```
 
-* If you want to reach the app outside the running machine, make sure port 8501 is not filtered by firewall.
+* If you want to reach the app outside the running machine, make sure port 8501 is not filtered by a firewall.
 
 ### License
 `crypto-roc` is free and open source software and may be redistributed under the terms specified in the
