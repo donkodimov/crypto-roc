@@ -18,9 +18,9 @@ IMAGE = Image.open('logo.jpg')
 
 st.image(IMAGE, width=500)
 
-st.title('Price vs ROC App')
+st.title('Cryptocurrency Wealth Cycle')
 st.markdown("""
-This app retrieves cryptocurrency prices from **Yahoo Finance** and calculates the Rate of Change!
+This app retrieves cryptocurrency prices from **Yahoo Finance** and compares it against other assets.
 """)
 # ---------------------------------#
 # About
@@ -89,9 +89,9 @@ st.write("""
 
 ***
 """)
-st.line_chart(DF['Close'])
-st.line_chart(DF['Gold'])
-st.line_chart(DF['ROC'])
+st.line_chart(DF['CC Price'])
+st.line_chart(DF['CC/Gold Ratio'])
+st.line_chart(DF['Rate of change'])
 
 
 # Download CSV data
