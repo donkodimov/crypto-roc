@@ -89,7 +89,7 @@ st.write("""
 
 ***
 """)
-st.bar_chart(DF['Close'])
+st.area_chart(DF['Close'])
 st.bar_chart(DF['Gold'])
 st.line_chart(DF['ROC'])
 
