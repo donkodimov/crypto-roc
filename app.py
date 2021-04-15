@@ -89,9 +89,9 @@ st.write("""
 
 ***
 """)
-st.line_chart(DF['CC Price'])
-st.line_chart(DF['CC/Gold Ratio'])
-st.line_chart(DF['Rate of change'])
+st.bar_chart(DF['Close'])
+st.bar_chart(DF['Gold'])
+st.bar_chart(DF['ROC'])
 
 
 # Download CSV data
