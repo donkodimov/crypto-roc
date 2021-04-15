@@ -91,7 +91,7 @@ st.write("""
 """)
 st.bar_chart(DF['Close'])
 st.bar_chart(DF['Gold'])
-st.bar_chart(DF['ROC'])
+st.line_chart(DF['ROC'])
 
 
 # Download CSV data
