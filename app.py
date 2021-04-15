@@ -18,9 +18,9 @@ IMAGE = Image.open('logo.jpg')
 
 st.image(IMAGE, width=500)
 
-st.title('Price vs ROC App')
+st.title('Cryptocurrency Wealth Cycle')
 st.markdown("""
-This app retrieves cryptocurrency prices from **Yahoo Finance** and calculates the Rate of Change!
+This app retrieves cryptocurrency prices from **Yahoo Finance** and compares it against other assets.
 """)
 # ---------------------------------#
 # About
@@ -49,7 +49,8 @@ CURRENCY_PRICE_UNIT = COL1.selectbox('Select currency',
                                       'ETH-USD',
                                       'LTC-USD',
                                       'DOGE-USD',
-                                      'XMR-USD')
+                                      'XMR-USD',
+                                      'ADA-USD')
                                      )
 ROC_PERIOD = COL1.selectbox('Select ROC period', (15, 25, 50, 100, 200))
 START_DATE = COL1.date_input("Start date", datetime.date(2010, 1, 1))
@@ -70,9 +71,17 @@ def roc(dataframe, period):
     result = pd.Series(((difference / old_price) * 100), name='ROC_' + str(old_price))
     return result
 
+def pm_ratio(metal):
+    """ This function calculates the ratio cryptocurrency vs presious metals."""
+    df_metal = pd.DataFrame(get_crypto(metal, '1d', START_DATE, END_DATE))
+    ratio = DF['Close'] / df_metal['Close']
+    return ratio
+
 
 DF = pd.DataFrame(get_crypto(CURRENCY_PRICE_UNIT, '1d', START_DATE, END_DATE))
 DF['ROC'] = roc(DF['Close'], ROC_PERIOD)
+DF['Gold'] = pm_ratio('GC=F')
+#DF['GOLD'] =
 DF.tail()
 
 st.write("""
@@ -80,7 +89,8 @@ st.write("""
 
 ***
 """)
-st.line_chart(DF['Close'])
+st.area_chart(DF['Close'])
+st.bar_chart(DF['Gold'])
 st.line_chart(DF['ROC'])
 
 
