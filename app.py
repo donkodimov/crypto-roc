@@ -46,6 +46,7 @@ COL1.header('Input Options')
 CURRENCY_PRICE_UNIT = COL1.selectbox('Select currency',
                                      ('SNT-USD',
                                       'BTC-USD',
+                                      'BTC-EUR',
                                       'ETH-USD',
                                       'LTC-USD',
                                       'DOGE-USD',
