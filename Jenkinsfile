@@ -13,12 +13,6 @@ pipeline {
       }
     }
 
-#    stage('Security Scan') {
-#      steps {
-#        aquaMicroscanner(imageName: 'donko/btcroc:v0.1', onDisallowed: 'fail', notCompliesCmd: 'exit 1', outputFormat: 'html')
-#      }
-#    }
-
     stage('Login to dockerhub') {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerhub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
