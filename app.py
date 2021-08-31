@@ -52,7 +52,8 @@ CURRENCY_PRICE_UNIT = COL1.selectbox('Select currency',
                                       'LTC-USD',
                                       'DOGE-USD',
                                       'XMR-USD',
-                                      'ADA-USD')
+                                      'ADA-USD',
+                                      'SOL1-USD')
                                      )
 ROC_PERIOD = COL1.selectbox('Select ROC period', (15, 25, 50, 100, 200))
 START_DATE = COL1.date_input("Start date", datetime.date(2010, 1, 1))
